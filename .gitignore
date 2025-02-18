@@ -40,3 +40,13 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
+
+amplify/.env
+amplify/backend/amplify-meta.json
+
+package-lock.json

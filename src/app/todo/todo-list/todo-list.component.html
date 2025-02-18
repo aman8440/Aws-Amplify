@@ -1,0 +1,14 @@
+<main>
+  <h1>My todos</h1>
+  <!-- <button (click)="createTodo()">+ new</button> -->
+  <ul>
+    @for (todo of todos; track $index) {
+      <li>{{ todo.title }}</li>
+      <!-- <button (click)="updateTodo(todo)">Edit</button>
+      <button (click)="deleteTodo(todo.id)">Delete</button> -->
+    }
+  </ul>
+  <div>
+    🥳 App successfully hosted. Try creating a new todo.
+  </div>
+</main>
