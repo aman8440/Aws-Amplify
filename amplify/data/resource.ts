@@ -18,7 +18,7 @@ const schema = a.schema({
   .returns(a.json())
   .handler(a.handler.function(dataAccess))
   .authorization(allow => [
-    allow.authenticated(),
+    allow.publicApiKey(),
   ]),
 
 });

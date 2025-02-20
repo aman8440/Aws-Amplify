@@ -3,7 +3,22 @@
   <!-- <button (click)="createTodo()">+ new</button> -->
   <ul>
     @for (todo of todos; track $index) {
-      <li>{{ todo.title }}</li>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Completed</th>
+            <th>CreatedAt</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.completed }}</td>
+            <td>{{ todo.createdAt }}</td>
+          </tr>
+        </tbody>
+      </table>
       <!-- <button (click)="updateTodo(todo)">Edit</button>
       <button (click)="deleteTodo(todo.id)">Delete</button> -->
     }
