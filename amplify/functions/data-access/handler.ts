@@ -1,9 +1,6 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { 
-  DynamoDBDocumentClient, 
-  PutCommand, 
-  UpdateCommand, 
-  DeleteCommand,
+  DynamoDBDocumentClient,
   ScanCommand
 } from '@aws-sdk/lib-dynamodb';
 
@@ -40,64 +37,3 @@ export const handler = async (event: any) => {
   }
 
 };
-
-
-// async function createTodo(data: any): Promise<AmplifyBackendResponse> {
-//   const todo = {
-//     type: 'TODO',
-//     title: data.title,
-//     completed: false,
-//     createdAt: new Date().toISOString()
-//   };
-
-//   const command = new PutCommand({
-//     TableName: tableName,
-//     Item: todo
-//   });
-
-//   await docClient.send(command);
-
-//   return {
-//     statusCode: 201,
-//     body: JSON.stringify(todo)
-//   };
-// }
-
-// async function updateTodo(id: string, data: any): Promise<AmplifyBackendResponse> {
-//   const command = new UpdateCommand({
-//     TableName: tableName,
-//     Key: {
-//       id,
-//       type: 'TODO'
-//     },
-//     UpdateExpression: "set completed = :completed",
-//     ExpressionAttributeValues: {
-//       ":completed": data.completed
-//     },
-//     ReturnValues: "ALL_NEW"
-//   });
-
-//   const response = await docClient.send(command);
-
-//   return {
-//     statusCode: 200,
-//     body: JSON.stringify(response.Attributes)
-//   };
-// }
-
-// async function deleteTodo(id: string): Promise<AmplifyBackendResponse> {
-//   const command = new DeleteCommand({
-//     TableName: tableName,
-//     Key: {
-//       id,
-//       type: 'TODO'
-//     }
-//   });
-
-//   await docClient.send(command);
-
-//   return {
-//     statusCode: 204,
-//     body: ''
-//   };
-// }
